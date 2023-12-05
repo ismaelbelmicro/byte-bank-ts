@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Armazenador } from "./Armazenador.js";
-import { ValidaDebito } from "./Decorators.js";
+import { ValidaDebito, ValidaDeposito } from "./Decorators.js";
 import { TipoTransacao } from "./TipoTransacao.js";
 export class Conta {
     nome;
@@ -83,6 +83,9 @@ export class Conta {
 __decorate([
     ValidaDebito
 ], Conta.prototype, "debitar", null);
+__decorate([
+    ValidaDeposito
+], Conta.prototype, "depositar", null);
 export class ContaPremium extends Conta {
     registrarTransacao(transacao) {
         if (transacao.tipoTransacao === TipoTransacao.DEPOSITO) {
